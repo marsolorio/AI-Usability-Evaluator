@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Usability Evaluation Tool</title>
+</head>
+<body>
+    <h1>AI Usability Evaluation Tool</h1>
+
+    <!-- URL Evaluation -->
+    <h2>Enter a URL to Evaluate</h2>
+    <form action="/evaluate" method="post">
+        <input type="text" name="url" placeholder="Enter URL">
+        <button type="submit">Evaluate</button>
+    </form>
+
+    <!-- Alt Text Generator -->
+    <h2>Alt Text Generator</h2>
+    <form action="/generate-alt-text" method="post">
+        <input type="text" name="image_url" placeholder="Enter Image URL">
+        <button type="submit">Generate Alt Text</button>
+    </form>
+
+    <!-- Semantic Analyzer -->
+    <h2>Semantic Analyzer</h2>
+    <form action="/semantic-analysis" method="post">
+        <textarea name="html_snippet" placeholder="Enter HTML Snippet"></textarea>
+        <button type="submit">Analyze Structure</button>
+    </form>
+
+    <!-- Real-Time Usability Evaluation -->
+    <h2>Real-Time Usability Evaluator</h2>
+    <form action="/usability-evaluation" method="post">
+        <textarea name="user_log" placeholder="Enter User Interaction Log"></textarea>
+        <button type="submit">Evaluate Log</button>
+    </form>
+</body>
+</html>
