@@ -3,37 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Usability Evaluation Tool</title>
+    <title>AI Usability Evaluation Tool - Martin Solorio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <h1>AI Usability Evaluation Tool</h1>
-
-    <!-- URL Evaluation -->
-    <h2>Enter a URL to Evaluate</h2>
-    <form action="/evaluate" method="post">
-        <input type="text" name="url" placeholder="Enter URL">
-        <button type="submit">Evaluate</button>
-    </form>
-
-    <!-- Alt Text Generator -->
-    <h2>Alt Text Generator</h2>
-    <form action="/generate-alt-text" method="post">
-        <input type="text" name="image_url" placeholder="Enter Image URL">
-        <button type="submit">Generate Alt Text</button>
-    </form>
-
-    <!-- Semantic Analyzer -->
-    <h2>Semantic Analyzer</h2>
-    <form action="/semantic-analysis" method="post">
-        <textarea name="html_snippet" placeholder="Enter HTML Snippet"></textarea>
-        <button type="submit">Analyze Structure</button>
-    </form>
-
-    <!-- Real-Time Usability Evaluation -->
-    <h2>Real-Time Usability Evaluator</h2>
-    <form action="/usability-evaluation" method="post">
-        <textarea name="user_log" placeholder="Enter User Interaction Log"></textarea>
-        <button type="submit">Evaluate Log</button>
-    </form>
+    <header>
+        <h1>AI Usability Evaluation Tool</h1>
+        <p>Web Usability INFO 251 - Martin Solorio</p>
+    </header>
+    <div class="content">
+        <form method="POST" action="/">
+            <label for="url">Enter a URL to evaluate:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+            <button type="submit">Evaluate</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Martin Solorio | INFO 251 - Web Usability</p>
+    </footer>
 </body>
 </html>
