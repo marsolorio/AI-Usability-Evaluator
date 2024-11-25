@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evaluation Result</h1>
+    
+    <h2>Results for: {{ result.url }}</h2>
+    
+    <p><strong>Headers:</strong></p>
+    <ul>
+        <li>H1 Tags: {{ result.h1_tags }}</li>
+        <li>H2 Tags: {{ result.h2_tags }}</li>
+    </ul>
+    
+    <p><strong>Images Missing Alt Text:</strong></p>
+    <ul>
+        {% for image in result.missing_alt %}
+        <li><a href="{{ image }}" target="_blank">{{ image }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
