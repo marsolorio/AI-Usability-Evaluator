@@ -3,42 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Evaluation Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
-<body>
-    <h1>Evaluation Result</h1>
-    
-    <h2>Results for: {{ result.url }}</h2>
-    
-    <p><strong>Headers:</strong></p>
-    <ul>
-        <li>H1 Tags: {{ result.h1_tags }}</li>
-        <li>H2 Tags: {{ result.h2_tags }}</li>
-    </ul>
-    
-    <p><strong>Images Missing Alt Text:</strong></p>
-    <ul>
-        {% for image in result.missing_alt %}
-        <li><a href="{{ image }}" target="_blank">{{ image }}</a></li>
-        {% endfor %}
-    </ul>
-
-    <a href="/">Back to Home</a>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center">Evaluation Result</h1>
+        <p><strong>Page Title:</strong> {{ result.title }}</p>
+        <p><strong>Images Missing Alt Text:</strong></p>
+        <ul>
+            {% for img in result.images_missing_alt %}
+            <li>{{ img }}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Headings Count:</strong></p>
+        <ul>
+            <li>H1: {{ result.headings.h1 }}</li>
+            <li>H2: {{ result.headings.h2 }}</li>
+        </ul>
+        <img src="/static/heatmap.png" alt="Visual Attention Heatmap" class="img-fluid">
+        <a href="/" class="btn btn-primary mt-4">Back to Home</a>
+    </div>
 </body>
 </html>

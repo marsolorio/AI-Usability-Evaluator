@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Results</title>
+</head>
+<body>
+    <h1>Comparison Results</h1>
+    <ul>
+        {% for url, data in results.items() %}
+        <li>
+            <h2>URL: {{ url }}</h2>
+            <p><strong>Title:</strong> {{ data.get('title', 'No Title Found') }}</p>
+            <p><strong>Images Missing Alt Text:</strong></p>
+            <ul>
+                {% for img in data.get('images_missing_alt', []) %}
+                <li>{{ img }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Headings Count:</strong></p>
+            <ul>
+                <li>H1: {{ data.get('headings', {}).get('h1', 0) }}</li>
+                <li>H2: {{ data.get('headings', {}).get('h2', 0) }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
